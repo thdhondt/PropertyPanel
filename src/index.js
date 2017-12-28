@@ -1,17 +1,11 @@
+import ReactDOM from 'react-dom';
+import TextProperty from './text-property';
 import React from 'react';
-import { render } from 'react-dom';
-import Hello from './Hello';
 
-const styles = {
-  fontFamily: 'sans-serif',
-  textAlign: 'center',
-};
-
-const App = () => (
-  <div style={styles}>
-    <Hello name="CodeSandbox" />
-    <h2>Start editing to see some magic happen {'\u2728'}</h2>
-  </div>
+ReactDOM.render(
+  <div>
+    <TextProperty/>
+    <TextProperty name = 'Test' />
+  </div>,
+  document.getElementById('root')
 );
-
-render(<App />, document.getElementById('root'));
