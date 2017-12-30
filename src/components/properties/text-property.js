@@ -5,12 +5,6 @@ import FieldText from '@atlaskit/field-text';
 import Container from './styled/container';
 
 class TextProperty extends React.Component {
-
-  handleOnChange(event) {
-    this.setState({ value: event.target.value });
-    this.props.onChange(event);
-  }
-
   render() {
     return (
       <Container>
