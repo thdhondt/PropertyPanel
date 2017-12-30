@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Label from './styled/label';
 
 class TextProperty extends React.Component {
 
@@ -21,12 +22,12 @@ class TextProperty extends React.Component {
 
   render() {
     return (
-      <form>
-        <label>
-          {this.props.name}
-          <input type="text" value={this.state.value} onChange={this.onChange} />
-        </label>
-      </form>
+        <form>
+          <Label for ='test'>
+            {this.props.name}
+          </Label>
+          <input type="text" value={this.state.value} onChange={this.onChange} id = 'text'/>
+        </form>
     );
   }
 }

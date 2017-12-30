@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import TextProperty from './text-property';
+import TextProperty from './components/properties/text-property';
 import React from 'react';
 
 ReactDOM.render(
