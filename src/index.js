@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import TextProperty from './components/properties/text-property'
 import DropProperty from './components/properties/drop-property'
+import Header from './components/properties/header'
 
 const items = [
   {
@@ -17,10 +18,10 @@ const items = [
 
 
 ReactDOM.render(
-  <div>
+  <Header title = "Property group">
     <TextProperty label="Signal name"/>
     <TextProperty/>
     <DropProperty items={items} defaultSelected={items[0].items[0]}/>
-  </div>,
+  </Header>,
   document.getElementById('root')
 );
