@@ -3,6 +3,7 @@ import React from 'react';
 import Label from './styled/label';
 import FieldText from '@atlaskit/field-text';
 import Container from './styled/container';
+import WidthWrapper from './styled/width-wrapper';
 
 class TextProperty extends React.Component {
   render() {
@@ -11,7 +12,12 @@ class TextProperty extends React.Component {
         <Label>
           {this.props.label}
         </Label>
-        <FieldText {...this.props} isLabelHidden/>
+        <WidthWrapper>
+          <FieldText 
+            {...this.props} 
+            isLabelHidden
+            shouldFitContainer/>
+        </WidthWrapper>
       </Container>
     );
   }

@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Label from './styled/label';
 import Container from './styled/container';
+import WidthWrapper from './styled/width-wrapper';
 import SingleSelect from '@atlaskit/single-select';
 
 class DropProperty extends React.Component {
@@ -20,12 +21,14 @@ class DropProperty extends React.Component {
         <Label>
           {this.props.label}
         </Label>
-        <SingleSelect
-          shouldFlip={false}
-          shouldFitContainer={true}
-          items = {this.props.items}
-          defaultSelected = {this.props.defaultSelected}
-        />
+        <WidthWrapper>
+          <SingleSelect
+            shouldFlip={false}
+            shouldFitContainer
+            items = {this.props.items}
+            defaultSelected = {this.props.defaultSelected}
+          />
+        </WidthWrapper>
       </Container>
     );
   }
