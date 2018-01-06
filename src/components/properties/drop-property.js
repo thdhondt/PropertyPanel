@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Label from './styled/label';
 import Container from './styled/container';
-import DropdownMenu from '@atlaskit/dropdown-menu';
+import SingleSelect from '@atlaskit/single-select';
 
 class DropProperty extends React.Component {
 
@@ -20,14 +20,12 @@ class DropProperty extends React.Component {
         <Label>
           {this.props.label}
         </Label>
-        <DropdownMenu
-          trigger="Test"
-          triggerType="button"
+        <SingleSelect
           shouldFlip={false}
           shouldFitContainer={true}
-          onItemActivated={ (item) => (this.onItemSelected(item)) }>
-          {this.props.children}
-        </DropdownMenu>
+          items = {this.props.items}
+          defaultSelected = {this.props.defaultSelected}
+        />
       </Container>
     );
   }
