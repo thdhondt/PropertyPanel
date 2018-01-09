@@ -4,19 +4,22 @@ import AngleRight from 'react-icons/lib/fa/angle-right';
 import HeaderWrapper from './styled/header-wrapper';
 import HeaderIcon from './styled/header-icon';
 import Highlight from './styled/highlight';
+import Collapse from './styled/collapse';
 
 class Header extends React.Component {
 
-  state = {isCollapsed: true,
-           isHovering: false};
+  state = {isCollapsed: false,
+           isHovering: false,
+           height: '100%'};
 
   onCollapse(e){
     if (this.state.isCollapsed){
-      this.setState({ isCollapsed: false });
+      this.setState({ isCollapsed: false,
+                      height: '100%'});
     }else{
-      this.setState({ isCollapsed: true })
-    }  
-    console.log(this.state.isCollapsed)    
+      this.setState({ isCollapsed: true,
+                      height: '0px'})
+    }     
   }
 
   onHover(e){
@@ -29,28 +32,36 @@ class Header extends React.Component {
 
   render() {
     return (
+      // Indented pannel
       <div>
+        {/*Mouse actions on the header*/}
         <Container 
           onClick      = {(e) => (this.onCollapse(e))}
           onMouseEnter = {(e) => (this.onHover(e))}
-          onMouseLeave = {(e) => (this.afterHover(e))}
-        >
+          onMouseLeave = {(e) => (this.afterHover(e))}>
+          {/*Header highlight*/}
           <Highlight on = {this.state.isHovering}>
+            {/*Arrow on the left*/}
             <HeaderIcon up = {this.state.isCollapsed}>
               <AngleRight/>
             </HeaderIcon>
+            {/*Title*/}
             <HeaderWrapper>
               {this.props.title}
             </HeaderWrapper>
           </Highlight>
         </Container>  
-        <div>   
+
+        {/*Collapsible content*/}
+        <Collapse height = {this.state.height}>   
           {this.props.children} 
-        </div>
+        </Collapse>
       </div>
     );
   }
 }
+
+
 
 // Export defqult class
 export default Header;
