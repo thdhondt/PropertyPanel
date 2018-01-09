@@ -5,6 +5,7 @@ import HeaderWrapper from './styled/header-wrapper';
 import HeaderIcon from './styled/header-icon';
 import Highlight from './styled/highlight';
 import Collapse from './styled/collapse';
+import Indent from './styled/indent';
 
 class Header extends React.Component {
 
@@ -33,7 +34,7 @@ class Header extends React.Component {
   render() {
     return (
       // Indented pannel
-      <div>
+      <Indent>
         {/*Mouse actions on the header*/}
         <Container 
           onClick      = {(e) => (this.onCollapse(e))}
@@ -56,7 +57,7 @@ class Header extends React.Component {
         <Collapse height = {this.state.height}>   
           {this.props.children} 
         </Collapse>
-      </div>
+      </Indent>
     );
   }
 }
