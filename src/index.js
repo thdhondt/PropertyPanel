@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import TextProperty from './components/properties/text-property'
 import DropProperty from './components/properties/drop-property'
-import Header from './components/properties/header'
+import GroupProperty from './components/properties/group-property'
 
 const items = [
   {
@@ -19,16 +19,16 @@ const items = [
 
 ReactDOM.render(
   <div>
-    <Header title = "Property group">
+    <GroupProperty title = "Property group">
       <TextProperty label="Signal name"/>
       <TextProperty/>
       <DropProperty items={items} defaultSelected={items[0].items[0]}/>
-    </Header>
-    <Header title="Outter property group">
-      <Header title="Inner group">
+    </GroupProperty>
+    <GroupProperty title="Outter property group">
+      <GroupProperty title="Inner group">
         <TextProperty label="Signal name" />
-      </Header>
-    </Header>
+      </GroupProperty>
+    </GroupProperty>
   </div>,
   document.getElementById('root')
 );

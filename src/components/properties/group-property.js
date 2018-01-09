@@ -7,7 +7,7 @@ import Highlight from './styled/highlight';
 import Collapse from './styled/collapse';
 import Indent from './styled/indent';
 
-class Header extends React.Component {
+class GroupProperty extends React.Component {
 
   state = {isCollapsed: false,
            isHovering: false,
@@ -65,4 +65,4 @@ class Header extends React.Component {
 
 
 // Export defqult class
-export default Header;
+export default GroupProperty;
