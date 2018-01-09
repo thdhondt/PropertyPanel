@@ -27,8 +27,10 @@ const rotateUp = keyframes`
 
 const HeaderIcon = styled.span`
   display: inline-block;
-  text-align: right;
-  padding:10px;
+  transformOrigin:"50% 50%"
+
+  text-align: rigt;
+  padding:2px;
   font-size:20px;
   font-family:helvetica;
   color: ${getColor()};

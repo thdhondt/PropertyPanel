@@ -6,7 +6,7 @@ const getDisabledColor = themed({ light: colors.N60, dark: colors.DN300 });
 
 const Label = styled.span`
   display: inline-block;
-  width: 100px;
+  width: 75px;
   text-align: right;
   padding:10px;
   font-size:12px;
